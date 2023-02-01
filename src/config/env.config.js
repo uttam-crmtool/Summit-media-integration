@@ -9,9 +9,13 @@ dotenv.config({
 
 const envObject = {
   ENVIRONMENT: environment,
-  PORT: Number(process.env.PORT) || 8080,
-  BASE_URL: process.env.BASE_URL || "http://localhost:8080",
   WELCOME_MESSAGE: process.env.WELCOME_MESSAGE || "Welcome",
+  PORT: process.env.PORT,
+  BASE_URL: process.env.BASE_URL,
+  DATABASE_URL: process.env.DATABASE_URL,
+  GMAIL_CLIENT_ID: process.env.GMAIL_CLIENT_ID,
+  GMAIL_CLIENT_SECRET: process.env.GMAIL_CLIENT_SECRET,
+  GMAIL_REDIRECT_URL: process.env.GMAIL_REDIRECT_URL,
 };
 
 module.exports = envObject;

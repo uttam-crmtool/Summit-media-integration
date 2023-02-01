@@ -1,6 +1,8 @@
 const express = require("express");
 const createHttpError = require("http-errors");
-const { WELCOME_MESSAGE } = require("../config/env.config");
+const { WELCOME_MESSAGE } = require("@config/env.config");
+const { handleAuthCallback } = require("@controllers/auth.controller");
+const { handleAuth } = require("@controllers/auth.controller");
 const routes = express.Router();
 
 routes.get("/", async (req, res, next) => {
@@ -17,5 +19,9 @@ routes.get("/", async (req, res, next) => {
     );
   }
 });
+
+routes.get(`/auth`, handleAuth);
+
+routes.get(`/authorize-google/callback`, handleAuthCallback); // /oauthcallback?code=
 
 module.exports = routes;

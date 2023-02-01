@@ -46,17 +46,11 @@ const logger = createLogger({
     new DailyRotateFile({
       filename: "src/logs/debug/debug.%DATE%.log",
       datePattern: "DD-MM-YYYY",
-      // zippedArchive: true,
-      // maxSize: "20m",
-      // maxFiles: "14d",
       level: "debug",
     }),
     new DailyRotateFile({
       filename: "src/logs/error/error.%DATE%.log",
       datePattern: "DD-MM-YYYY",
-      // zippedArchive: true,
-      // maxSize: "20m",
-      // maxFiles: "14d",
       level: "error",
     }),
   ],

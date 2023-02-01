@@ -11,6 +11,7 @@ const {
 const { logger } = require("@config/logger.config");
 const createHttpError = require("http-errors");
 const routes = require("@routes/index.routes");
+require("@config/mongodb.config");
 
 const app = express();
 
@@ -53,7 +54,7 @@ app.use((err, req, res, next) => {
 app
   .listen(PORT, () => {
     logger.info(`* * * ${WELCOME_MESSAGE} * * *`);
-    logger.info(`* * * URL :: ${BASE_URL} :: ${ENVIRONMENT} * * *`);
+    logger.info(`* * * URL :: ${BASE_URL}/auth :: ${ENVIRONMENT} * * *`);
   })
   .on("error", (error) => {
     logger.error(`* * * Server Error * * *`);
